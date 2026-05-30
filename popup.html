@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Context Bridge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="url(#g1)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#00f3ff"/><stop offset="100%" style="stop-color:#bc13fe"/></linearGradient></defs>
+      </svg>
+      <span>AI Context Bridge</span>
+    </div>
+    <div id="platformBadge" class="badge">—</div>
+  </header>
+
+  <!-- Main action -->
+  <button id="extractBtn" class="btn-extract">
+    <span class="btn-icon">⚡</span>
+    <span>Capture Conversation</span>
+  </button>
+
+  <!-- Status -->
+  <div id="statusWrap" class="status-wrap hidden">
+    <div id="statusIcon" class="status-icon"></div>
+    <div id="statusText" class="status-text"></div>
+  </div>
+
+  <!-- Stats bar -->
+  <div id="statsBar" class="stats-bar hidden">
+    <span id="statTurns" class="stat-item"></span>
+    <span class="stat-sep">·</span>
+    <span id="statIntent" class="stat-item"></span>
+    <span class="stat-sep">·</span>
+    <span id="statTech" class="stat-item"></span>
+  </div>
+
+  <!-- Output -->
+  <div id="outputWrap" class="output-wrap hidden">
+    <div class="output-label">
+      <span>CONTINUATION PROMPT</span>
+      <span id="charCount" class="char-count"></span>
+    </div>
+    <textarea id="output" readonly spellcheck="false" placeholder="The continuation prompt will appear here…"></textarea>
+  </div>
+
+  <!-- Action buttons -->
+  <div id="actionBar" class="action-bar hidden">
+    <button id="copyBtn" class="action-btn primary">
+      <span>📋</span> Copy Prompt
+    </button>
+    <button id="clearBtn" class="action-btn ghost">
+      <span>✕</span> Clear
+    </button>
+  </div>
+
+  <!-- Target AI quick-open -->
+  <div id="targetWrap" class="target-wrap hidden">
+    <div class="target-label">Open in →</div>
+    <div class="target-grid">
+      <a id="openChatGPT" class="target-btn gpt" href="https://chat.openai.com" target="_blank">ChatGPT</a>
+      <a id="openClaude"  class="target-btn cld" href="https://claude.ai/new" target="_blank">Claude</a>
+      <a id="openGemini"  class="target-btn gem" href="https://gemini.google.com/app" target="_blank">Gemini</a>
+      <a id="openGroq"    class="target-btn grq" href="https://console.groq.com/playground" target="_blank">Groq</a>
+    </div>
+    <p class="target-hint">Copy the prompt above, then click any target to open it.</p>
+  </div>
+
+  <!-- Saved sessions -->
+  <details class="panel" id="savedPanel">
+    <summary>
+      <span>📁 Saved Sessions</span>
+      <span id="savedCount" class="saved-count"></span>
+    </summary>
+    <div class="panel-body">
+      <div id="saveForm" class="save-form hidden">
+        <input id="sessionName" type="text" placeholder="Session name (optional)">
+        <button id="saveBtn" class="btn-save">Save</button>
+      </div>
+      <div id="sessionList"></div>
+    </div>
+  </details>
+
+  <script src="ai-engine.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
