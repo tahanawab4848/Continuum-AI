@@ -1,0 +1,11 @@
+# Node modules and build artifacts
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+*.zip
+dist/
+# VS Code settings
+.vscode/
+# OS files
+desktop.ini
