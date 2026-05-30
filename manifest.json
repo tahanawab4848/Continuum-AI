@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "NeonBridge – AI Context Exporter",
+  "version": "5.0",
+  "description": "Instantly transfer any AI conversation to another AI — perfectly, with zero context loss.",
+  "permissions": ["activeTab", "scripting", "storage", "clipboardWrite"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI Context Bridge"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
