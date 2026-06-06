@@ -1,4 +1,4 @@
-// Continuum — Prompt Engine v5
+// Continuum-AI — Prompt Engine v5
 // Single responsibility: turn a raw transcript into a perfect continuation prompt.
 'use strict';
 

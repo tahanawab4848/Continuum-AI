@@ -1,7 +1,7 @@
-# 🧠 Continuum v5.0 - Seamless AI Handoff Engine
+# 🧠 Continuum-AI v5.0 - Seamless AI Handoff Engine
 
 ## Overview
-Continuum is an advanced Chrome extension that intelligently extracts, analyzes, and transforms **ANY AI conversation** into a precise, actionable context prompt that can be seamlessly handed off and continued across any AI platform.
+Continuum-AI is an advanced Chrome extension that intelligently extracts, analyzes, and transforms **ANY AI conversation** into a precise, actionable context prompt that can be seamlessly handed off and continued across any AI platform.
 
 **Works with 20+ AI platforms:** ChatGPT, Claude, Gemini, Groq, Perplexity, HuggingFace, Copilot, Mistral, DeepSeek, Poe, You.com, and more!
 

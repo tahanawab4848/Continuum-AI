@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Continuum – Continuum",
+  "name": "Continuum-AI – Continuum-AI",
   "version": "5.0",
   "description": "Instantly transfer any AI conversation to another AI — perfectly, with zero context loss.",
   "permissions": ["activeTab", "scripting", "storage", "clipboardWrite"],
@@ -15,7 +15,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Continuum",
+    "default_title": "Continuum-AI",
     "default_icon": {
       "16": "icon16.png",
       "48": "icon48.png",

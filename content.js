@@ -1,4 +1,4 @@
-// Continuum — Content Script v5
+// Continuum-AI — Content Script v5
 // Single responsibility: extract the visible conversation transcript, in order, correctly.
 'use strict';
 
@@ -188,11 +188,11 @@ function extractConversation() {
           });
         }
 
-        console.log(`[Continuum] "${strategy.name}" → ${clean.length} msgs`);
+        console.log(`[Continuum-AI] "${strategy.name}" → ${clean.length} msgs`);
         return clean;
       }
     } catch (e) {
-      console.warn(`[Continuum] "${strategy.name}" failed:`, e.message);
+      console.warn(`[Continuum-AI] "${strategy.name}" failed:`, e.message);
     }
   }
   return [];
@@ -204,10 +204,10 @@ chrome.runtime.onMessage.addListener((req, _sender, sendResponse) => {
   try {
     const platform = detectPlatform();
     const messages = extractConversation();
-    console.log(`[Continuum] ${platform}: ${messages.length} messages extracted`);
+    console.log(`[Continuum-AI] ${platform}: ${messages.length} messages extracted`);
     sendResponse({ ok: true, platform, messages });
   } catch (err) {
-    console.error('[Continuum]', err);
+    console.error('[Continuum-AI]', err);
     sendResponse({ ok: false, error: err.message, platform: detectPlatform(), messages: [] });
   }
 });

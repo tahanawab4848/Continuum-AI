@@ -1,4 +1,4 @@
-// Continuum — Popup v5
+// Continuum-AI — Popup v5
 'use strict';
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
@@ -124,7 +124,7 @@ extractBtn.addEventListener('click', async () => {
     loadSessions();
 
   } catch (err) {
-    console.error('[Continuum]', err);
+    console.error('[Continuum-AI]', err);
     setStatus('❌', `Error: ${err.message}`, 'err');
   } finally {
     extractBtn.disabled = false;
