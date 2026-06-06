@@ -1,7 +1,7 @@
-# 🧠 AI Context Bridge v5.0 - Seamless AI Handoff Engine
+# 🧠 Continuum v5.0 - Seamless AI Handoff Engine
 
 ## Overview
-AI Context Bridge is an advanced Chrome extension that intelligently extracts, analyzes, and transforms **ANY AI conversation** into a precise, actionable context prompt that can be seamlessly handed off and continued across any AI platform.
+Continuum is an advanced Chrome extension that intelligently extracts, analyzes, and transforms **ANY AI conversation** into a precise, actionable context prompt that can be seamlessly handed off and continued across any AI platform.
 
 **Works with 20+ AI platforms:** ChatGPT, Claude, Gemini, Groq, Perplexity, HuggingFace, Copilot, Mistral, DeepSeek, Poe, You.com, and more!
 
@@ -95,14 +95,14 @@ AI Context Bridge is an advanced Chrome extension that intelligently extracts, a
 1. **Clone the Repository**
    Open your terminal and run the following command to download the extension:
    ```bash
-   git clone https://github.com/tahanawab4848/NeonBridge-AI.git
+   git clone https://github.com/tahanawab4848/Continuum-AI.git
    ```
 
 2. **Load in Chrome**
    - Open Google Chrome and navigate to `chrome://extensions/` in your address bar.
    - Toggle **"Developer Mode"** ON (located in the top right corner).
    - Click the **"Load unpacked"** button (top left).
-   - Select the `NeonBridge-AI` folder that you just cloned.
+   - Select the `Continuum-AI` folder that you just cloned.
 
 3. **Run the Extension**
    - Pin the extension to your Chrome toolbar for easy access.

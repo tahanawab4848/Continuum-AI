@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "NeonBridge – AI Context Exporter",
+  "name": "Continuum – Continuum",
   "version": "5.0",
   "description": "Instantly transfer any AI conversation to another AI — perfectly, with zero context loss.",
   "permissions": ["activeTab", "scripting", "storage", "clipboardWrite"],
@@ -15,7 +15,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "AI Context Bridge",
+    "default_title": "Continuum",
     "default_icon": {
       "16": "icon16.png",
       "48": "icon48.png",

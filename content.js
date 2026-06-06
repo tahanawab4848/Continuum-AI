@@ -1,4 +1,4 @@
-// AI Context Bridge — Content Script v5
+// Continuum — Content Script v5
 // Single responsibility: extract the visible conversation transcript, in order, correctly.
 'use strict';
 
@@ -188,11 +188,11 @@ function extractConversation() {
           });
         }
 
-        console.log(`[AI Context Bridge] "${strategy.name}" → ${clean.length} msgs`);
+        console.log(`[Continuum] "${strategy.name}" → ${clean.length} msgs`);
         return clean;
       }
     } catch (e) {
-      console.warn(`[AI Context Bridge] "${strategy.name}" failed:`, e.message);
+      console.warn(`[Continuum] "${strategy.name}" failed:`, e.message);
     }
   }
   return [];
@@ -204,10 +204,10 @@ chrome.runtime.onMessage.addListener((req, _sender, sendResponse) => {
   try {
     const platform = detectPlatform();
     const messages = extractConversation();
-    console.log(`[AI Context Bridge] ${platform}: ${messages.length} messages extracted`);
+    console.log(`[Continuum] ${platform}: ${messages.length} messages extracted`);
     sendResponse({ ok: true, platform, messages });
   } catch (err) {
-    console.error('[AI Context Bridge]', err);
+    console.error('[Continuum]', err);
     sendResponse({ ok: false, error: err.message, platform: detectPlatform(), messages: [] });
   }
 });

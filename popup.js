@@ -1,4 +1,4 @@
-// AI Context Bridge — Popup v5
+// Continuum — Popup v5
 'use strict';
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
@@ -124,7 +124,7 @@ extractBtn.addEventListener('click', async () => {
     loadSessions();
 
   } catch (err) {
-    console.error('[AI Context Bridge]', err);
+    console.error('[Continuum]', err);
     setStatus('❌', `Error: ${err.message}`, 'err');
   } finally {
     extractBtn.disabled = false;
