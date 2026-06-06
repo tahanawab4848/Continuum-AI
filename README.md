@@ -1,18 +1,19 @@
-# 🧠 AI Context OS v3 - Intelligent Context Engine
+# 🧠 AI Context Bridge v5.0 - Seamless AI Handoff Engine
 
 ## Overview
-AI Context OS is an advanced Chrome extension that intelligently extracts, analyzes, and transforms **ANY AI conversation** into precise, actionable context that can be seamlessly continued across any AI platform.
+AI Context Bridge is an advanced Chrome extension that intelligently extracts, analyzes, and transforms **ANY AI conversation** into a precise, actionable context prompt that can be seamlessly handed off and continued across any AI platform.
 
-**Works with 20+ AI platforms:** ChatGPT, Claude, Gemini, Groq, Perplexity, HuggingFace, Cohere, Mistral, DeepSeek, Poe, You.com, Bing, Ollama, and many more!
+**Works with 20+ AI platforms:** ChatGPT, Claude, Gemini, Groq, Perplexity, HuggingFace, Copilot, Mistral, DeepSeek, Poe, You.com, and more!
 
 ## 🚀 Key Features
 
-### 1. **Intelligent Context Analysis**
-- **Intent Detection**: Automatically identifies conversation purpose (debugging, learning, coding, design, etc.)
-- **Technical Term Extraction**: Recognizes programming languages, frameworks, and databases
-- **Code Block Extraction**: Isolates and preserves all code snippets with language detection
-- **Task Extraction**: Identifies action items and TODO items from conversation
-- **Decision Tracking**: Captures key decisions made during the conversation
+### 1. **Next-Gen Context Analysis & Handoff**
+- **Dynamic Domain Detection**: Seamlessly adapts to Creative Writing, Data Analysis, Software Engineering, Roleplay, and General Discussion.
+- **Critical Cutoff Recovery**: Detects if an AI was cut-off mid-generation and specifically commands the new AI to instantly finish the interrupted code block.
+- **Smart Token Compression**: Automatically truncates 20+ message long histories, preserving crucial opening context and the most recent 15 turns with an AI System note to save tokens.
+- **Artifact & Canvas Extraction**: Automatically hooks into Claude's Artifact side-panels and ChatGPT's Canvas elements to capture the raw, working code.
+- **Blind Attachment Warnings**: Detects file and image uploads and injects warnings to the new AI so it doesn't hallucinate missing context.
+- **Workspace Memory**: Extracts actively mentioned files (e.g. `index.js`, `app.py`) to give the new AI an implicit project map.
 
 ### 2. **Precision Context Generation**
 - **Executive Summary**: Concise overview of conversation focus
@@ -268,12 +269,20 @@ MIT License - Free to use and modify
 
 ## 🎉 Version History
 
-### v3.0 (Current)
-- Intelligent AI Engine
-- Advanced context analysis
-- Multi-AI optimization
-- Structured output
-- Enhanced analytics
+### v5.0 (Current)
+- Massive Versatility Upgrade (Dynamic Domain Detection)
+- Smart Token Compression (TL;DR Engine for 20+ turns)
+- Critical Cutoff Mid-Code Recovery Directive
+- Claude Artifact & ChatGPT Canvas Extraction Hook
+- Blind Attachment Warnings
+- UI Advanced Settings panel (Strict Mode & Compression)
+
+### v4.0
+- Intelligent AI Meta-Prompt Wrapper
+- Flawless session synchronization protocol
+- Advanced error state detection
+
+### v3.0
 
 ### v2.0
 - Project management
