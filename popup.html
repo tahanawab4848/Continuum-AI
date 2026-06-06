@@ -61,6 +61,23 @@
     </button>
   </div>
 
+  <!-- Settings -->
+  <details class="panel" id="settingsPanel">
+    <summary>
+      <span>⚙️ Advanced Settings</span>
+    </summary>
+    <div class="panel-body">
+      <label class="setting-item">
+        <input type="checkbox" id="optCompress" checked>
+        <span>Smart Token Compression (>20 msgs)</span>
+      </label>
+      <label class="setting-item">
+        <input type="checkbox" id="optStrictMode">
+        <span>Force Strict Mode (No preamble)</span>
+      </label>
+    </div>
+  </details>
+
   <!-- Target AI quick-open -->
   <div id="targetWrap" class="target-wrap hidden">
     <div class="target-label">Open in →</div>

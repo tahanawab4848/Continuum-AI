@@ -90,17 +90,23 @@ extractBtn.addEventListener('click', async () => {
 
     setStatus('🧠', `Building prompt from ${msgs.length} messages…`, 'busy');
 
+    // Read options
+    const options = {
+      compress: $('optCompress')?.checked ?? true,
+      strict: $('optStrictMode')?.checked ?? false
+    };
+
     // Build the continuation prompt
-    const prompt = PromptEngine.buildPrompt(msgs, resp.platform);
-    const intent = PromptEngine.detectIntent(msgs);
+    const prompt = PromptEngine.buildPrompt(msgs, resp.platform, options);
+    const domain = PromptEngine.detectDomain(msgs);
     const tech   = PromptEngine.detectTech(msgs);
 
     currentPrompt = prompt;
-    currentMeta   = { platform: resp.platform, userCount, aiCount, intent, tech, total: msgs.length };
+    currentMeta   = { platform: resp.platform, userCount, aiCount, domain, tech, total: msgs.length };
 
     // Show stats bar
     $('statTurns').textContent  = `${userCount}u / ${aiCount}ai`;
-    $('statIntent').textContent = intent;
+    $('statIntent').textContent = domain;
     $('statTech').textContent   = tech.slice(0, 3).join(', ') || 'no tech detected';
     show(statsBar);
 

@@ -22,7 +22,18 @@ function detectPlatform() {
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
-const getText = el => (el?.innerText || el?.textContent || '').trim();
+const getText = el => {
+  let text = (el?.innerText || el?.textContent || '').trim();
+  
+  // Blind Attachment Warnings
+  const hasImage = el.querySelector('img, [style*="background-image"]');
+  const hasFile = el.querySelector('[class*="file-"], [class*="attachment"], [aria-label*="file"]');
+  
+  if (hasImage) text += '\n\n[System Note: The User attached an image here. You cannot see it. Rely on text context.]';
+  else if (hasFile && text.length < 50) text += '\n\n[System Note: The User attached a file here. You cannot see the raw file. Rely on text context.]';
+  
+  return text;
+};
 
 // True if an element is actually rendered on screen (not a hidden branch)
 const isVisible = el =>
@@ -167,6 +178,16 @@ function extractConversation() {
       if (!result?.length) continue;
       const clean = dedupe(result);
       if (clean.length > 0) {
+        
+        // ── Claude Artifact / ChatGPT Canvas Extraction ──
+        const artifactEl = document.querySelector('.font-claude-message, [data-testid="artifact-content"], .canvas-content, [data-testid="canvas"]');
+        if (artifactEl && isVisible(artifactEl)) {
+          clean.push({
+            role: 'assistant',
+            text: `[System Note: The assistant updated the Artifact/Canvas side-panel with the following content:]\n\n${getText(artifactEl)}`
+          });
+        }
+
         console.log(`[AI Context Bridge] "${strategy.name}" → ${clean.length} msgs`);
         return clean;
       }
