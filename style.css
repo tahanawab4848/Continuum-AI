@@ -28,10 +28,10 @@ body {
   min-height: 80px;
   font-family: var(--font);
   font-size: 13px;
-  background: var(--bg);
+  background: #030407;
   background-image:
-    radial-gradient(ellipse at 10% 0%, rgba(0,243,255,0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 100%, rgba(188,19,254,0.05) 0%, transparent 50%);
+    radial-gradient(circle at 15% 10%, rgba(0,243,255,0.07) 0%, transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(188,19,254,0.07) 0%, transparent 40%);
   color: var(--txt);
   padding: 16px;
   display: flex;
@@ -126,7 +126,9 @@ header {
   gap: 8px;
   padding: 10px 12px;
   border-radius: var(--radius);
-  background: var(--surf);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--bdr);
 }
 .status-icon { font-size: 16px; line-height: 1; }
@@ -171,8 +173,10 @@ textarea#output {
   width: 100%;
   height: 200px;
   padding: 12px;
-  background: rgba(0,0,0,0.45);
-  border: 1px solid var(--bdr);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius);
   color: var(--green);
   font-family: 'Menlo', 'Consolas', 'Courier New', monospace;
@@ -180,10 +184,11 @@ textarea#output {
   line-height: 1.65;
   resize: vertical;
   outline: none;
-  transition: border-color 0.2s;
+  transition: all 0.3s;
   caret-color: var(--cyan);
+  box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);
 }
-textarea#output:focus { border-color: rgba(0,243,255,0.4); }
+textarea#output:focus { border-color: rgba(0,243,255,0.5); box-shadow: inset 0 2px 10px rgba(0,0,0,0.5), var(--glow-cyan); }
 
 /* ── Action buttons ── */
 .action-bar {
@@ -276,12 +281,15 @@ textarea#output:focus { border-color: rgba(0,243,255,0.4); }
   line-height: 1.5;
 }
 
-/* ── Panel (Saved sessions) ── */
+/* ── Panel (Saved sessions & Settings) ── */
 .panel {
-  border: 1px solid var(--bdr);
+  border: 1px solid rgba(255,255,255,0.06);
   border-radius: var(--radius);
   overflow: hidden;
-  background: var(--surf);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 .panel > summary {
   display: flex;
@@ -368,6 +376,58 @@ textarea#output:focus { border-color: rgba(0,243,255,0.4); }
 .session-del  { font-size: 12px; color: var(--txt-muted); cursor: pointer; padding: 2px 5px; border-radius: 4px; transition: all 0.15s; }
 .session-del:hover { color: var(--pink); background: rgba(255,45,107,0.1); }
 .empty-msg { font-size: 11px; color: var(--txt-muted); padding: 6px 2px; font-style: italic; }
+
+/* ── Custom Toggles (Settings) ── */
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 4px;
+  cursor: pointer;
+  user-select: none;
+}
+.setting-item span {
+  font-size: 11px;
+  color: var(--txt-muted);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.setting-item:hover span { color: var(--txt); }
+
+.setting-item input[type="checkbox"] {
+  appearance: none;
+  width: 32px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+.setting-item input[type="checkbox"]::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.setting-item input[type="checkbox"]:checked {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  box-shadow: 0 0 12px rgba(0,243,255,0.3);
+}
+.setting-item input[type="checkbox"]:checked::after {
+  transform: translateX(14px);
+  background: #030407;
+}
 
 /* ── Utility ── */
 .hidden { display: none !important; }
