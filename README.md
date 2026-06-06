@@ -90,16 +90,24 @@ AI Context Bridge is an advanced Chrome extension that intelligently extracts, a
 - Track decisions
 - Generate action items
 
-## 🔧 Installation
+## 🔧 Installation & Setup
 
-1. **Download Extension**
-   - Clone or download the extension folder
+1. **Clone the Repository**
+   Open your terminal and run the following command to download the extension:
+   ```bash
+   git clone https://github.com/tahanawab4848/NeonBridge-AI.git
+   ```
 
 2. **Load in Chrome**
-   - Go to `chrome://extensions/`
-   - Enable "Developer Mode" (top right)
-   - Click "Load unpacked"
-   - Select the `ai-context-exporter` folder
+   - Open Google Chrome and navigate to `chrome://extensions/` in your address bar.
+   - Toggle **"Developer Mode"** ON (located in the top right corner).
+   - Click the **"Load unpacked"** button (top left).
+   - Select the `NeonBridge-AI` folder that you just cloned.
+
+3. **Run the Extension**
+   - Pin the extension to your Chrome toolbar for easy access.
+   - Open any AI chat (e.g., ChatGPT, Claude).
+   - Click the extension icon and hit **"Capture Conversation"**!
 
 3. **Configure (Optional)**
    - Add Groq API key for AI compression
