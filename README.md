@@ -1,5 +1,7 @@
 # 🧠 Continuum-AI v5.0 - Seamless AI Handoff Engine
 
+## _MIT LICENSE_
+
 ## Overview
 Continuum-AI is an advanced Chrome extension that intelligently extracts, analyzes, and transforms **ANY AI conversation** into a precise, actionable context prompt that can be seamlessly handed off and continued across any AI platform.
 
